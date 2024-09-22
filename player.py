@@ -8,6 +8,8 @@ class Player(CircleShape):
 
     def __init__(self, x, y):
         super().__init__(x, y, PLAYER_RADIUS)
+
+        self.current_points = 0
         self.rotation = 0
         self.tick = 0
 
@@ -54,3 +56,6 @@ class Player(CircleShape):
             player_shoot.velocity = (
                 pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
             )
+
+    def add_points(self):
+        self.current_points += 1
